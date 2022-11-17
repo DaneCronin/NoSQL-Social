@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/social-ap
 // Log mongo queries being executed
 mongoose.set('debug', true);
 
-app.use(require('./routes'));
+app.use(require('./routes/api'));
 
 
 

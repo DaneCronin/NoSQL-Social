@@ -23,12 +23,11 @@ const UserSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'User'
         }
-
     }
 );
 
 //Create User model using UserSchema
-const User = model('UserSchema', UserSchema);
+const User = model('User', UserSchema);
 
 //Export Model
 module.exports = User;

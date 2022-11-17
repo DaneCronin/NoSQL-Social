@@ -1,0 +1,26 @@
+{
+  "name": "nosql-social-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaneCronin/NoSQL-Social-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaneCronin/NoSQL-Social-/issues"
+  },
+  "homepage": "https://github.com/DaneCronin/NoSQL-Social-#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^4.12.0",
+    "mongoose": "^6.7.2"
+  }
+}

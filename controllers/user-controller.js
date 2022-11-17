@@ -17,7 +17,7 @@ const userController = {
 
 
 //Get one User by ID
-getUserById({params}, res) {
+getUserById ({params}, res) {
     User.findOne({_id: params.id})
     
     .then(dbUserData => {
@@ -61,7 +61,7 @@ updateUser({params, body}, res) {
 
 
 //Delete User by ID
-deleteUser({params}, res) {
+deleteUser ({params}, res) {
     User.findOneAndDelete({_id: params.id})
     .then(dbUserData => {
         //If no user is found send error with 'no user found'
@@ -78,7 +78,7 @@ deleteUser({params}, res) {
 },
 
 //Add Friend
-addFriend({params}, res) {
+addFriend ({params}, res) {
     User.findOneAndUpdate({_id: params.id},
         {$pull: {friends: params.friendId}},
         {new: true})
@@ -97,7 +97,7 @@ addFriend({params}, res) {
 },
 
 //Remove Friend
-removeFriend({params}, res) {
+removeFriend ({params}, res) {
     User.findOneAndUpdate(
         {_id: params.id},
         {$pull: {friends: params.friendId}},

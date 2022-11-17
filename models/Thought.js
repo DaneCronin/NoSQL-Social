@@ -3,7 +3,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const ReactionSchema = new Schema(
     {
-        //Custom Reaction ID to differentiate from parent Thougth_ID
+        //Custom Reaction ID to differentiate from parent Thought_ID
       reactionId: {
         type: Schema.Types.ObjectId,
         default: () => Types.ObjectId()
@@ -22,8 +22,13 @@ const ReactionSchema = new Schema(
       createdAt: {
         type: Date,
         default: Date.now,
-        get: (createdAtVal) => dateFormat(createdAtVal)
+        get: createdAtVal => dateFormat(createdAtVal)
       }
+    },
+    {
+        toJSON: {
+            getters: true
+        }
     }
 );
 
@@ -46,10 +51,23 @@ const ThoughtSchema = new Schema(
         type: String,
         required: true,
         trim: true
-       }
+       },
 
+       // Reactions associated with Thoughts to validate data for reactions
+       reactions: [ReactionSchema]
+    },
+    {
+        toJSON: {
+            virtuals: true,
+            getters: true
+        }
     }
 );
+
+//Get total count of reactions
+ThoughtSchema.virtual('reactionCount').get(function() {
+return this.reactions.length
+});
 
 
 //Create Thought Model from ThoughtSchema

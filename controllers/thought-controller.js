@@ -5,6 +5,7 @@ const thoughtController = {
     //Get All Thoughts
     getAllThoughts(req, res) {
         Thought.find({})
+        .select('-__v')
         //Sort in descending order by id value
         .sort({_id: -1})
         .then(dbThoughtData => res.json(dbThoughtData))
@@ -17,6 +18,7 @@ const thoughtController = {
     //Get Thought by ID
     getThoughtById({params}, res) {
         Thought.findOne({_id: params.id})
+        .select('-__v')
         .then(dbThoughtData => {
             //If no thought is found return error 'No thought found'
             if(!dbThoughtData) {

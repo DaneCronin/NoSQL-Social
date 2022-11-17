@@ -5,6 +5,15 @@ const userController = {
     //Get all users
     getAllUser(req, res) {
         User.find({})
+        .populate({
+            path: 'thougths',
+            select: '-__v'
+        })
+        .populate({
+            path: 'friends',
+            select: '-__v'
+        })
+        .select('-__v')
         
         //sort in descending order of id value
         .sort({_id: -1})
@@ -19,7 +28,15 @@ const userController = {
 //Get one User by ID
 getUserById ({params}, res) {
     User.findOne({_id: params.id})
-    
+    .populate({
+        path: 'comments',
+        select: '-__v'
+    })
+    .populate({
+        path: 'friends',
+        select: '-__v'
+    })
+    .select('-__v')
     .then(dbUserData => {
         //If no user is found send error with 'no user found'
         if(!dbUserData) {

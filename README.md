@@ -12,7 +12,7 @@
   * [Questions?](#questions)
 
   ## Description
-   NoSQL Social is a back-end server that can be used for social-media using a NoSQL database. NoSQL Social features full CRUD capabilities allowing users to be created, updated, deleted, Thoughts may be created, updated and deleted as well as reactions to the Thoughts. Users may also add and remove friends. NoSQL Social was built with Node.js, MongoDB with Mongoose and Express.js packages.
+   NoSQL Social is a back-end server that can be used for social-media using a NoSQL database. NoSQL Social features full CRUD capabilities allowing users to be created, updated, deleted. Thoughts may be created, updated, and deleted as well as reactions to the Thoughts. Users may also add and remove friends. NoSQL Social was built with Node.js, MongoDB with Mongoose and Express.js packages.
 
   ## Installation
   *Steps required to install project and how to get application running*

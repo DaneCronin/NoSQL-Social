@@ -23,6 +23,10 @@
   *Instructions and examples for use:*
 
   Currently NoSQL Social is only back-end and therefore may only be used for testing the API endpoints using Insomnia or similar.
+  <img width="1504" alt="Screenshot 2022-11-17 at 7 13 19 PM" src="https://user-images.githubusercontent.com/107944830/202601334-91d615a5-d5ab-4d61-b573-d246ed2faa89.png">
+
+  
+  
 
   ## Contributing
   *Please follow these guidelines if you would like to contribute:*
